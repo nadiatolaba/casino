@@ -1,6 +1,6 @@
 export abstract class Juego {
     protected tematica: string;
-    protected apuesta:number;
+    protected apuesta: number;
     protected resultado: number;
 
     constructor (pTematica:string, pApuesta:number){
@@ -14,7 +14,7 @@ export abstract class Juego {
         return nroAleatorio;
     }
 
-    public abstract guardarResultadoEnTxT():void;
+    protected abstract guardarResultadoEnTxT(resultado: string):void;
 
     public abstract jugar():void;
 

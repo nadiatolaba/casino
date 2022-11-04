@@ -1,1 +1,14 @@
-Ejemplo
+EjemploINFO - 4 - Juego: Ruleta - Dinero Apostado: 500 - Resultado apuesta: 0 - Numero Ganador: 7 - Numero Elegido:10
+INFO - Fri Nov 04 2022 16:32:27 GMT-0300 (hora estándar de Argentina) - Juego: Ruleta - Dinero Apostado: 500 - Resultado apuesta: 0 - Numero Ganador: 31 - Numero Elegido:10
+
+INFO - 4/10/2022 16:43:51 - Juego: Ruleta - Dinero Apostado: 500 - Resultado apuesta: 0 - Numero Ganador: 5 - Numero Elegido: 10
+INFO - 4/10/2022 16:45:26 - Juego: Ruleta - Dinero Apostado: $500 - Resultado apuesta: $0 - Numero Ganador: 34 - Numero Elegido: 10
+INFO - 4/10/2022 16:45:53 - Juego: Ruleta - Dinero Apostado: $500 - Resultado apuesta: $0 - Numero Ganador: 2 - Numero Elegido: 10
+INFO - 4/10/2022 16:46:3 - Juego: Ruleta - Dinero Apostado: $500 - Resultado apuesta: $0 - Numero Ganador: 13 - Numero Elegido: 10
+INFO - 4/10/2022 16:46:14 - Juego: Ruleta - Dinero Apostado: $500 - Resultado apuesta: $0 - Numero Ganador: 13 - Numero Elegido: 10
+INFO - 4/10/2022 16:46:42 - Juego: Ruleta - Dinero Apostado: $500 - Resultado apuesta: $0 - Numero Ganador: 1 - Numero Elegido: 10
+INFO - 4/10/2022 16:46:46 - Juego: Ruleta - Dinero Apostado: $500 - Resultado apuesta: $0 - Numero Ganador: 16 - Numero Elegido: 10
+INFO - 4/10/2022 16:46:55 - Juego: Ruleta - Dinero Apostado: $500 - Resultado apuesta: $0 - Numero Ganador: 22 - Numero Elegido: 10
+INFO - 4/10/2022 16:47:0 - Juego: Ruleta - Dinero Apostado: $500 - Resultado apuesta: $0 - Numero Ganador: 29 - Numero Elegido: 10
+INFO - 4/10/2022 16:52:26 - Juego: Ruleta - Dinero Apostado: $500 - Resultado apuesta: $0 - Numero Ganador: 13 - Numero Elegido: 10
+INFO - 4/10/2022 16:52:56 - Juego: Ruleta - Resultado apuesta: $0 - Dinero apostado: $500 - Numero elegido: 10 - Numero ganador: 22

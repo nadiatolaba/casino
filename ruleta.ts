@@ -1,30 +1,43 @@
 import * as fs from "fs";
 import { Juego } from "./Juego";
 export class Ruleta extends Juego {
-
     private numeroElegido:number;
+    private numeroGanador:number;
 
     constructor (pTematica:string, pApuesta:number, paramElegido:number){
         super(pTematica, pApuesta)
         this.numeroElegido = paramElegido;
+        this.numeroGanador = -1;
     }
 
-    public guardarResultadoEnTxT():void {
-        
+    protected guardarResultadoEnTxT(resultado: string):void {
+        let path: string = "infoJuegos\\resultados\\ruleta.txt";
+        fs.appendFile(path, resultado, (error) => {
+            if (error) {
+                console.log(error);
+                return 
+            }
+        });
     }
+
     public jugar(): void {
-        let resultado = this.generarNroAleatorioEntreRango(0,36);
-        if(this.numeroElegido === resultado){
-            this.setResultado(this.apuesta * 2)
+        this.numeroGanador = this.generarNroAleatorioEntreRango(0,36);
+        if(this.numeroElegido ===  this.numeroGanador){
+            this.setResultado(this.apuesta * 2);
         } else {
             this.setResultado(0);
         }
+        let fechaActual: string = new Date().getDate() + "/" + new Date().getMonth() + "/" + new Date().getFullYear();
+        let horaActual: string = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
+        let resultado: string = `\nINFO - ${fechaActual} ${horaActual} - Juego: ${this.tematica} - Resultado apuesta: $${this.resultado} - Dinero apostado: $${this.apuesta} - Numero elegido: ${this.numeroElegido} - Numero ganador: ${this.numeroGanador}`;
+        this.guardarResultadoEnTxT(resultado);
     }
+
     public mostrarInstrucciones(): void {
-        let path: string = "casinoPOO\\ejemplo.txt";
-        fs.readFile(path,'utf-8',(error:Error, data:string) => {
+        let path: string ="infoJuegos\\instrucciones\\ruleta.txt"
+        fs.readFile(path,'utf-8',(error, texto) => {
             if(!error){
-                console.log(data)
+                console.log(texto)
             }
             else{ 
                 console.log(error)
