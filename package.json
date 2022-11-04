@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "main": "node ./javascript/main.js",
+    "ruleta": "node ./javascript/ruleta.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

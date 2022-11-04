@@ -4,7 +4,7 @@ export class Ruleta extends Juego {
     private numeroElegido:number;
     private numeroGanador:number;
 
-    constructor (pTematica:string, pApuesta:number, paramElegido:number){
+    constructor (pTematica: string, pApuesta: number, paramElegido: number){
         super(pTematica, pApuesta)
         this.numeroElegido = paramElegido;
         this.numeroGanador = -1;
