@@ -1,4 +1,3 @@
-import * as fs from "fs";
 import { Juego } from "./Juego";
 export class Ruleta extends Juego {
     private numeroElegido:number;
@@ -25,20 +24,12 @@ export class Ruleta extends Juego {
     }
 
     public mostrarInstrucciones(): void {
-        let path: string ="infoJuegos\\instrucciones\\ruleta.txt"
-        fs.readFile(path,'utf-8',(error, texto) => {
-            if(!error){
-                console.log(texto)
-            }
-            else{ 
-                console.log(error)
-            }
-        });
+        this.leerArchivo("infoJuegos\\instrucciones\\ruleta.txt")
     }
 
 }
 
 let juegoRuleta: Ruleta = new Ruleta ('Ruleta', 500, 10);
+juegoRuleta.mostrarInstrucciones();
 juegoRuleta.jugar();
 console.log(juegoRuleta.getResultado());
-juegoRuleta.mostrarInstrucciones();

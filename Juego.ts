@@ -23,6 +23,18 @@ export abstract class Juego {
             }
         });
     }
+
+    protected leerArchivo(ruta:string) {
+        fs.readFile(ruta,'utf-8',(error, texto) => {
+            if(!error){
+                console.log(texto)
+            }
+            else{ 
+                console.log(error)
+            }
+        });
+    }
+
     public abstract jugar():void;
 
     protected setResultado(paramResultado:number):void{
