@@ -1,22 +1,42 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.Juego = void 0;
-class Juego {
-    constructor(pTematica, pApuesta) {
+var fs = require("fs");
+var Juego = /** @class */ (function () {
+    function Juego(pTematica, pApuesta) {
         this.tematica = pTematica;
         this.apuesta = pApuesta;
         this.resultado = 0;
     }
-    generarNroAleatorioEntreRango(minimo, maximo) {
-        let nroAleatorio = Math.floor(Math.random() * ((maximo - minimo) + 1) + minimo);
+    Juego.prototype.generarNroAleatorioEntreRango = function (minimo, maximo) {
+        var nroAleatorio = Math.floor(Math.random() * ((maximo - minimo) + 1) + minimo);
         return nroAleatorio;
-    }
-    setResultado(paramResultado) {
+    };
+    Juego.prototype.guardarResultadoEnTxT = function (ruta, resultado) {
+        fs.appendFile(ruta, resultado, function (error) {
+            if (error) {
+                console.log(error);
+                return;
+            }
+        });
+    };
+    Juego.prototype.leerArchivo = function (ruta) {
+        fs.readFile(ruta, 'utf-8', function (error, texto) {
+            if (!error) {
+                console.log(texto);
+            }
+            else {
+                console.log(error);
+            }
+        });
+    };
+    Juego.prototype.setResultado = function (paramResultado) {
         this.resultado = paramResultado;
-    }
+    };
     ;
-    getResultado() {
+    Juego.prototype.getResultado = function () {
         return this.resultado;
-    }
-}
+    };
+    return Juego;
+}());
 exports.Juego = Juego;
