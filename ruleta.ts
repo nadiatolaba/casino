@@ -10,16 +10,6 @@ export class Ruleta extends Juego {
         this.numeroGanador = -1;
     }
 
-    protected guardarResultadoEnTxT(resultado: string):void {
-        let path: string = "infoJuegos\\resultados\\ruleta.txt";
-        fs.appendFile(path, resultado, (error) => {
-            if (error) {
-                console.log(error);
-                return 
-            }
-        });
-    }
-
     public jugar(): void {
         this.numeroGanador = this.generarNroAleatorioEntreRango(0,36);
         if(this.numeroElegido ===  this.numeroGanador){
@@ -30,7 +20,8 @@ export class Ruleta extends Juego {
         let fechaActual: string = new Date().getDate() + "/" + new Date().getMonth() + "/" + new Date().getFullYear();
         let horaActual: string = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
         let resultado: string = `\nINFO - ${fechaActual} ${horaActual} - Juego: ${this.tematica} - Resultado apuesta: $${this.resultado} - Dinero apostado: $${this.apuesta} - Numero elegido: ${this.numeroElegido} - Numero ganador: ${this.numeroGanador}`;
-        this.guardarResultadoEnTxT(resultado);
+        let ruta: string = "infoJuegos\\resultados\\ruleta.txt";
+        this.guardarResultadoEnTxT(ruta, resultado);
     }
 
     public mostrarInstrucciones(): void {

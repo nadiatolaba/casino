@@ -1,3 +1,4 @@
+import * as fs from "fs";
 export abstract class Juego {
     protected tematica: string;
     protected apuesta: number;
@@ -14,8 +15,14 @@ export abstract class Juego {
         return nroAleatorio;
     }
 
-    protected abstract guardarResultadoEnTxT(resultado: string):void;
-
+    protected guardarResultadoEnTxT(ruta: string, resultado: string):void {
+        fs.appendFile(ruta, resultado, (error) => {
+            if (error) {
+                console.log(error);
+                return 
+            }
+        });
+    }
     public abstract jugar():void;
 
     protected setResultado(paramResultado:number):void{
