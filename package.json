@@ -6,6 +6,8 @@
   "scripts": {
     "main": "node ./javascript/main.js",
     "ruleta": "node ./javascript/ruleta.js",
+    "tragamoneda": "node ./javascript/Tragamoneda.js",
+    "multilinea": "node ./javascript/TragamonedaMultilinea.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

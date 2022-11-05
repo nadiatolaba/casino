@@ -1,0 +1,146 @@
+
+INFO - 4/10/2022 22:19:3 - Juego: Tragamoneda Multilinea - Resultado apuesta: $0 - Dinero apostado: $300
+	 - Matriz Generada: $,$,@
+@,#,#
+@,#,$
+	 lineas ganadoras: No hay lineas ganadoras
+INFO - 4/10/2022 22:30:55 - Juego: Tragamoneda Multilinea - Resultado apuesta: $0 - Dinero apostado: $300
+	 - Matriz Generada:
+	@,#,#
+$,#,$
+@,$,$
+	 Cantidad de Lineas ganadoras: 0
+INFO - 4/10/2022 22:31:14 - Juego: Tragamoneda Multilinea - Resultado apuesta: $300 - Dinero apostado: $300
+	 - Matriz Generada:
+	#,$,@
+$,@,$
+@,@,$
+	 Cantidad de Lineas ganadoras: 1
+INFO - 4/10/2022 22:31:31 - Juego: Tragamoneda Multilinea - Resultado apuesta: $300 - Dinero apostado: $300
+	 - Matriz Generada:
+	#,@,#
+@,#,@
+#,@,$
+	 Cantidad de Lineas ganadoras: 1
+INFO - 4/10/2022 22:50:28 - Juego: Tragamoneda Multilinea - Resultado apuesta: $0 - Dinero apostado: $300
+	 - Matriz Generada:
+		#,@,$
+		@,#,@
+		@,#,@	 Cantidad de Lineas ganadoras: 0
+INFO - 4/10/2022 22:50:41 - Juego: Tragamoneda Multilinea - Resultado apuesta: $0 - Dinero apostado: $300
+	 - Matriz Generada:
+		$,#,@
+		$,@,$
+		$,@,$	 Cantidad de Lineas ganadoras: 0
+INFO - 4/10/2022 22:50:55 - Juego: Tragamoneda Multilinea - Resultado apuesta: $600 - Dinero apostado: $300
+	 - Matriz Generada:
+		#,$,#
+		@,#,$
+		@,#,$	 Cantidad de Lineas ganadoras: 1
+INFO - 4/10/2022 22:54:9 - Juego: Tragamoneda Multilinea - Resultado apuesta: $0 - Dinero apostado: $300
+	 - Matriz Generada:
+		$,@,#
+			#,@,@
+			#,@,@
+	 Cantidad de Lineas ganadoras: 0
+INFO - 4/10/2022 22:54:21 - Juego: Tragamoneda Multilinea - Resultado apuesta: $0 - Dinero apostado: $300
+	 - Matriz Generada:
+		$,#,#
+			@,$,@
+			@,$,@
+	 Cantidad de Lineas ganadoras: 0
+INFO - 4/10/2022 22:54:32 - Juego: Tragamoneda Multilinea - Resultado apuesta: $0 - Dinero apostado: $300
+	 - Matriz Generada:
+		#,$,@
+			@,$,#
+			@,$,#
+	 Cantidad de Lineas ganadoras: 0
+INFO - 4/10/2022 22:54:45 - Juego: Tragamoneda Multilinea - Resultado apuesta: $0 - Dinero apostado: $300
+	 - Matriz Generada:
+		$,#,#
+			@,#,$
+			@,#,$
+	 Cantidad de Lineas ganadoras: 0
+INFO - 4/10/2022 22:54:56 - Juego: Tragamoneda Multilinea - Resultado apuesta: $600 - Dinero apostado: $300
+	 - Matriz Generada:
+		$,$,@
+			@,@,$
+			@,@,$
+	 Cantidad de Lineas ganadoras: 1
+INFO - 4/10/2022 22:56:38 - Juego: Tragamoneda Multilinea - Resultado apuesta: $0 - Dinero apostado: $300
+	 - Matriz Generada:
+			#,#,@
+			$,$,@
+			$,$,@
+	 - Cantidad de Lineas ganadoras: 0
+INFO - 4/10/2022 22:57:5 - Juego: Tragamoneda Multilinea - Resultado apuesta: $0 - Dinero apostado: $300
+	 - Matriz Generada:
+			$,#,@
+			$,#,$
+			$,#,$
+	 - Cantidad de Lineas ganadoras: 0
+INFO - 4/10/2022 22:57:22 - Juego: Tragamoneda Multilinea - Resultado apuesta: $600 - Dinero apostado: $300
+	 - Matriz Generada:
+			#,@,@
+			@,#,@
+			@,#,@
+	 - Cantidad de Lineas ganadoras: 1
+INFO - 4/10/2022 23:0:2 - Juego: Tragamoneda Multilinea - Resultado apuesta: $0 - Dinero apostado: $300
+	 - Matriz Generada:
+			@,$,#
+			$,@,@
+			$,@,#
+	 - Cantidad de Lineas ganadoras: 0
+INFO - 4/10/2022 23:1:5 - Juego: Tragamoneda Multilinea - Resultado apuesta: $600 - Dinero apostado: $300
+	 - Matriz Generada:
+			$,#,@
+			#,$,#
+			$,@,$
+	 - Cantidad de Lineas ganadoras: 1
+INFO - 4/10/2022 23:2:59 - Juego: Tragamoneda Multilinea - Resultado apuesta: $1200 - Dinero apostado: $300
+	 - Matriz Generada:
+			$,$,@
+			@,@,@
+			@,#,#
+	 - Cantidad de Lineas ganadoras: 2
+INFO - 4/10/2022 23:5:7 - Juego: Tragamoneda Multilinea - Resultado apuesta: $600 - Dinero apostado: $300
+	 - Matriz Generada:
+			$,$,$
+			@,#,#
+			$,#,$
+	 - Cantidad de Lineas ganadoras: 1
+INFO - 4/10/2022 23:47:17 - Juego: Tragamoneda Multilinea - Resultado apuesta: $600 - Dinero apostado: $300
+	 - Matriz Generada:
+			$,#,#
+			@,#,@
+			#,$,@
+	 - Cantidad de Lineas ganadoras: 1
+	 - Lineas ganadoras: diagonal 2: #,#,#   
+INFO - 4/10/2022 23:49:37 - Juego: Tragamoneda Multilinea - Resultado apuesta: $600 - Dinero apostado: $300
+	 - Matriz Generada:
+			@,@,@
+			#,@,#
+			$,@,$
+	 - Cantidad de Lineas ganadoras: 1
+	 - Lineas ganadoras: horizontal 1: @,@,@   
+INFO - 5/10/2022 0:0:48 - Juego: Tragamoneda Multilinea - Resultado apuesta: $600 - Dinero apostado: $300
+	 - Matriz Generada:
+			$,#,$
+			#,$,$
+			#,$,$
+	 - Cantidad de Lineas ganadoras: 1
+	 - Lineas ganadoras: diagonal 1: $,$,$   
+INFO - 5/10/2022 0:1:26 - Juego: Tragamoneda Multilinea - Resultado apuesta: $600 - Dinero apostado: $300
+	 - Matriz Generada:
+			@,#,$
+			$,@,#
+			#,#,@
+	 - Cantidad de Lineas ganadoras: 1
+	 - Lineas ganadoras: diagonal 1: @,@,@   
+INFO - 5/10/2022 0:2:17 - Juego: Tragamoneda Multilinea - Resultado apuesta: $0 - Dinero apostado: $300
+	 - Matriz Generada:
+			@,$,@
+			#,#,@
+			$,@,#
+	 - Cantidad de Lineas ganadoras: 0
+	 - Lineas ganadoras: No hay lineas ganadoras

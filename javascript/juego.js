@@ -31,6 +31,15 @@ class Juego {
         this.apuesta = pApuesta;
         this.resultado = 0;
     }
+    setApuesta(pApuesta) {
+        this.apuesta = pApuesta;
+    }
+    getApuesta() {
+        return this.apuesta;
+    }
+    getTematica() {
+        return this.tematica;
+    }
     generarNroAleatorioEntreRango(minimo, maximo) {
         let nroAleatorio = Math.floor(Math.random() * ((maximo - minimo) + 1) + minimo);
         return nroAleatorio;
@@ -40,6 +49,16 @@ class Juego {
             if (error) {
                 console.log(error);
                 return;
+            }
+        });
+    }
+    leerArchivo(ruta) {
+        fs.readFile(ruta, 'utf-8', (error, texto) => {
+            if (!error) {
+                console.log(texto);
+            }
+            else {
+                console.log(error);
             }
         });
     }
