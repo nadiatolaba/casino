@@ -49,5 +49,23 @@ class Tragamoneda extends Juego_1.Juego {
         }
         return presentacion;
     }
+    setSimbolosDisponibles(simbolos) {
+        this.simbolosDisponibles = simbolos;
+    }
+    getSimbolosDisponibles() {
+        return this.simbolosDisponibles;
+    }
+    getValoresDeApuesta() {
+        return this.valoresDeApuesta;
+    }
+    setValoresDeApuesta(valores) {
+        this.valoresDeApuesta = valores;
+    }
+    getProbabilidadDeGanar() {
+        return this.probabilidadDeGanar;
+    }
+    setProbabilidadDeGanar(probabilidad) {
+        this.probabilidadDeGanar = probabilidad;
+    }
 }
 exports.Tragamoneda = Tragamoneda;

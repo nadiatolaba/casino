@@ -14,6 +14,7 @@ export abstract class Tragamoneda extends Juego {
         this.matrizGenerada = [];
     }
 
+    
     private obtenerUnElementoAlAzar(elementos: string[]): string {
         let pos: number = this.generarNroAleatorioEntreRango(0, elementos.length-1);
         return elementos[pos];
@@ -60,6 +61,30 @@ export abstract class Tragamoneda extends Juego {
         }
         return presentacion;
 
+    }
+
+    public setSimbolosDisponibles(simbolos:string[]): void {
+        this.simbolosDisponibles = simbolos;
+    }
+
+    public getSimbolosDisponibles(): string[] {
+        return this.simbolosDisponibles;
+    }
+
+    public getValoresDeApuesta(): number[] {
+        return this.valoresDeApuesta;
+    }
+
+    public setValoresDeApuesta(valores: number[]) {
+        this.valoresDeApuesta = valores;
+    }
+
+    public getProbabilidadDeGanar(): number {
+        return this.probabilidadDeGanar;
+    }
+
+    public setProbabilidadDeGanar(probabilidad: number): void {
+        this.probabilidadDeGanar = probabilidad;
     }
     
 }
