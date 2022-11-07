@@ -4,9 +4,9 @@ export abstract class Juego {
     protected apuesta: number;
     protected resultado: number;
 
-    constructor (pTematica:string, pApuesta:number){
+    constructor (pTematica:string){
         this.tematica = pTematica;
-        this.apuesta = pApuesta;
+        this.apuesta = 0;
         this.resultado = 0;
     }
 

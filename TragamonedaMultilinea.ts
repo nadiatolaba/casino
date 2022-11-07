@@ -1,17 +1,17 @@
 import { Tragamoneda } from "./Tragamoneda";
 
 export class TragamonedaMultilinea extends Tragamoneda{
-    private lineasGanadoras:string;
+    private lineasGanadoras: string;
     private cantLineasGanadoras:number;
 
-    constructor(tematica: string, apuesta: number, simbolosDisponibles: string[], probabilidadDeGanar: number, valoresDeApuesta: number[]) {
-        super(tematica, apuesta, simbolosDisponibles,probabilidadDeGanar,valoresDeApuesta);
+    constructor(simbolosDisponibles: string[], probabilidadDeGanar: number, valoresDeApuesta: number[]) {
+        super("Tragamoneda Multilinea", simbolosDisponibles,probabilidadDeGanar,valoresDeApuesta);
         this.lineasGanadoras = "No hay lineas ganadoras";
         this.cantLineasGanadoras = 0;
     }
 
     public mostrarInstrucciones(): void {
-        let ruta: string = "infoJuegos\\instrucciones\\ruleta.txt";
+        let ruta: string = "infoJuegos\\instrucciones\\tragamonedaMultilinea.txt";
         this.leerArchivo(ruta);
     }
 
@@ -96,8 +96,9 @@ export class TragamonedaMultilinea extends Tragamoneda{
 
 
 let simbolos = ["#", "$", "@"];
-let tragamoneda = new TragamonedaMultilinea("Tragamoneda Multilinea", 300, simbolos, 40, [100, 300, 400]);
+let tragamoneda = new TragamonedaMultilinea(simbolos, 40, [100, 300, 400]);
 
+tragamoneda.setApuesta(300);
 tragamoneda.jugar()
 
 tragamoneda.mostrarInstrucciones();

@@ -3,7 +3,7 @@ import { Juego } from "./Juego"
 export class BlackJack extends Juego{
 
     constructor (){
-        super('BlackJack',1000)
+        super('BlackJack');
     }
 
     public jugar():void {
@@ -39,5 +39,6 @@ export class BlackJack extends Juego{
 }
 let newBlackJack: BlackJack = new BlackJack ();
 newBlackJack.mostrarInstrucciones();
+newBlackJack.setApuesta(1000);
 newBlackJack.jugar();
 console.log(newBlackJack.getResultado());

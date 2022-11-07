@@ -3,10 +3,22 @@ export class Ruleta extends Juego {
     private numeroElegido:number;
     private numeroGanador:number;
 
-    constructor (pTematica: string, pApuesta: number, paramElegido: number){
-        super(pTematica, pApuesta)
-        this.numeroElegido = paramElegido;
+    constructor (){
+        super("Ruleta");
+        this.numeroElegido = -1;
         this.numeroGanador = -1;
+    }
+
+    public getNroGanador(): number {
+        return this.numeroGanador;
+    }
+
+    public setNumeroElegido(pNroElegido: number): void {
+        this.numeroElegido = pNroElegido;
+    }
+
+    public getNumeroElegido(): number {
+        return this.numeroElegido;
     }
 
     public jugar(): void {
@@ -29,7 +41,9 @@ export class Ruleta extends Juego {
 
 }
 
-let juegoRuleta: Ruleta = new Ruleta ('Ruleta', 500, 10);
+let juegoRuleta: Ruleta = new Ruleta ();
+juegoRuleta.setNumeroElegido(10);
+juegoRuleta.setApuesta(500);
 juegoRuleta.mostrarInstrucciones();
 juegoRuleta.jugar();
 console.log(juegoRuleta.getResultado());

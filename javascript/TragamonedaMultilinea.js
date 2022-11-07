@@ -3,13 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TragamonedaMultilinea = void 0;
 const Tragamoneda_1 = require("./Tragamoneda");
 class TragamonedaMultilinea extends Tragamoneda_1.Tragamoneda {
-    constructor(tematica, apuesta, simbolosDisponibles, probabilidadDeGanar, valoresDeApuesta) {
-        super(tematica, apuesta, simbolosDisponibles, probabilidadDeGanar, valoresDeApuesta);
+    constructor(simbolosDisponibles, probabilidadDeGanar, valoresDeApuesta) {
+        super("Tragamoneda Multilinea", simbolosDisponibles, probabilidadDeGanar, valoresDeApuesta);
         this.lineasGanadoras = "No hay lineas ganadoras";
         this.cantLineasGanadoras = 0;
     }
     mostrarInstrucciones() {
-        let ruta = "infoJuegos\\instrucciones\\ruleta.txt";
+        let ruta = "infoJuegos\\instrucciones\\tragamonedaMultilinea.txt";
         this.leerArchivo(ruta);
     }
     getLineasGanadoras() {
@@ -76,7 +76,8 @@ class TragamonedaMultilinea extends Tragamoneda_1.Tragamoneda {
 }
 exports.TragamonedaMultilinea = TragamonedaMultilinea;
 let simbolos = ["#", "$", "@"];
-let tragamoneda = new TragamonedaMultilinea("Tragamoneda Multilinea", 300, simbolos, 40, [100, 300, 400]);
+let tragamoneda = new TragamonedaMultilinea(simbolos, 40, [100, 300, 400]);
+tragamoneda.setApuesta(300);
 tragamoneda.jugar();
 tragamoneda.mostrarInstrucciones();
 console.log();

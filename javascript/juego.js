@@ -26,9 +26,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Juego = void 0;
 const fs = __importStar(require("fs"));
 class Juego {
-    constructor(pTematica, pApuesta) {
+    constructor(pTematica) {
         this.tematica = pTematica;
-        this.apuesta = pApuesta;
+        this.apuesta = 0;
         this.resultado = 0;
     }
     setApuesta(pApuesta) {

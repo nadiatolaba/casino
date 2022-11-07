@@ -6,8 +6,8 @@ export abstract class Tragamoneda extends Juego {
     protected valoresDeApuesta: number[];
     protected matrizGenerada: string [][]; // [[a1,a2,a3], [b1,b2,b3], [c1,c2,c3]];
 
-    constructor(tematica: string, apuesta: number, simbolosDisponibles: string[], probabilidadDeGanar: number, valoresDeApuesta: number[]) {
-        super(tematica, apuesta);
+    constructor(tematica: string, simbolosDisponibles: string[], probabilidadDeGanar: number, valoresDeApuesta: number[]) {
+        super(tematica);
         this.simbolosDisponibles = simbolosDisponibles;
         this.probabilidadDeGanar = probabilidadDeGanar;
         this.valoresDeApuesta = valoresDeApuesta;

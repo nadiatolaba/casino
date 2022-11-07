@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tragamoneda = void 0;
 const Juego_1 = require("./Juego");
 class Tragamoneda extends Juego_1.Juego {
-    constructor(tematica, apuesta, simbolosDisponibles, probabilidadDeGanar, valoresDeApuesta) {
-        super(tematica, apuesta);
+    constructor(tematica, simbolosDisponibles, probabilidadDeGanar, valoresDeApuesta) {
+        super(tematica);
         this.simbolosDisponibles = simbolosDisponibles;
         this.probabilidadDeGanar = probabilidadDeGanar;
         this.valoresDeApuesta = valoresDeApuesta;

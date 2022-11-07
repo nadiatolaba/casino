@@ -3,10 +3,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Ruleta = void 0;
 const Juego_1 = require("./Juego");
 class Ruleta extends Juego_1.Juego {
-    constructor(pTematica, pApuesta, paramElegido) {
-        super(pTematica, pApuesta);
-        this.numeroElegido = paramElegido;
+    constructor() {
+        super("Ruleta");
+        this.numeroElegido = -1;
         this.numeroGanador = -1;
+    }
+    getNroGanador() {
+        return this.numeroGanador;
+    }
+    setNumeroElegido(pNroElegido) {
+        this.numeroElegido = pNroElegido;
+    }
+    getNumeroElegido() {
+        return this.numeroElegido;
     }
     jugar() {
         this.numeroGanador = this.generarNroAleatorioEntreRango(0, 36);
@@ -27,7 +36,9 @@ class Ruleta extends Juego_1.Juego {
     }
 }
 exports.Ruleta = Ruleta;
-let juegoRuleta = new Ruleta('Ruleta', 500, 10);
+let juegoRuleta = new Ruleta();
+juegoRuleta.setNumeroElegido(10);
+juegoRuleta.setApuesta(500);
 juegoRuleta.mostrarInstrucciones();
 juegoRuleta.jugar();
 console.log(juegoRuleta.getResultado());
