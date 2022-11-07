@@ -1,0 +1,3 @@
+
+INFO - 7/10/2022 13:35:49 - Juego: BlackJack - Resultado apuesta: $2000 - Dinero apostado: $1000 - Cartas Jugador: 13 - Cartas Casa: 10
+INFO - 7/10/2022 13:37:41 - Juego: BlackJack - Resultado apuesta: $2000 - Dinero apostado: $1000 - Cartas Jugador: 12 - Cartas Casa: 11
