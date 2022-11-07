@@ -1,59 +1,36 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.Juego = void 0;
-const fs = __importStar(require("fs"));
-class Juego {
-    constructor(pTematica) {
+var fs = require("fs");
+var Juego = /** @class */ (function () {
+    function Juego(pTematica, pApuesta) {
         this.tematica = pTematica;
-        this.apuesta = 0;
+        this.apuesta = pApuesta;
         this.resultado = 0;
     }
-    setApuesta(pApuesta) {
+    Juego.prototype.setApuesta = function (pApuesta) {
         this.apuesta = pApuesta;
-    }
-    getApuesta() {
+    };
+    Juego.prototype.getApuesta = function () {
         return this.apuesta;
-    }
-    getTematica() {
+    };
+    Juego.prototype.getTematica = function () {
         return this.tematica;
-    }
-    generarNroAleatorioEntreRango(minimo, maximo) {
-        let nroAleatorio = Math.floor(Math.random() * ((maximo - minimo) + 1) + minimo);
+    };
+    Juego.prototype.generarNroAleatorioEntreRango = function (minimo, maximo) {
+        var nroAleatorio = Math.floor(Math.random() * ((maximo - minimo) + 1) + minimo);
         return nroAleatorio;
-    }
-    guardarResultadoEnTxT(ruta, resultado) {
-        fs.appendFile(ruta, resultado, (error) => {
+    };
+    Juego.prototype.guardarResultadoEnTxT = function (ruta, resultado) {
+        fs.appendFile(ruta, resultado, function (error) {
             if (error) {
                 console.log(error);
                 return;
             }
         });
-    }
-    leerArchivo(ruta) {
-        fs.readFile(ruta, 'utf-8', (error, texto) => {
+    };
+    Juego.prototype.leerArchivo = function (ruta) {
+        fs.readFile(ruta, 'utf-8', function (error, texto) {
             if (!error) {
                 console.log(texto);
             }
@@ -61,13 +38,14 @@ class Juego {
                 console.log(error);
             }
         });
-    }
-    setResultado(paramResultado) {
+    };
+    Juego.prototype.setResultado = function (paramResultado) {
         this.resultado = paramResultado;
-    }
+    };
     ;
-    getResultado() {
+    Juego.prototype.getResultado = function () {
         return this.resultado;
-    }
-}
+    };
+    return Juego;
+}());
 exports.Juego = Juego;

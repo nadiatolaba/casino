@@ -2,8 +2,10 @@ import { Juego } from "./Juego"
 
 export class BlackJack extends Juego{
 
+    private numGanador:number;
     constructor (){
-        super('BlackJack');
+        super('BlackJack')
+        this.numGanador = 21;
     }
 
     public jugar():void {
@@ -13,7 +15,7 @@ export class BlackJack extends Juego{
         let suma4:number = (this.generarNroAleatorioEntreRango(1,11))
         let cartasJugador: number = suma1+suma3;
         let cartasCasa:number = suma2+suma4;
-        if(cartasJugador === 21){
+        if(cartasJugador === this.numGanador){
             this.setResultado(this.apuesta * 3);
             console.log(`¡BLACKJACK! ¡GANASTE!`)
         }else if(cartasJugador>cartasCasa){
