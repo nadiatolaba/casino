@@ -95,16 +95,16 @@ export class TragamonedaMultilinea extends Tragamoneda{
 }
 
 
-let simbolos = ["#", "$", "@"];
-let tragamoneda = new TragamonedaMultilinea(simbolos, 40, [100, 300, 400]);
+// let simbolos = ["#", "$", "@"];
+// let tragamoneda = new TragamonedaMultilinea(simbolos, 40, [100, 300, 400]);
 
-tragamoneda.setApuesta(300);
-tragamoneda.jugar()
+// tragamoneda.setApuesta(300);
+// tragamoneda.jugar()
 
-tragamoneda.mostrarInstrucciones();
+// tragamoneda.mostrarInstrucciones();
 
-console.log();
-console.log(tragamoneda.mostrarMatrizGenerada());
+// console.log();
+// console.log(tragamoneda.mostrarMatrizGenerada());
 
-console.log("apuesta realizada: " + tragamoneda.getApuesta())
-console.log("resultado: " + tragamoneda.getResultado());
+// console.log("apuesta realizada: " + tragamoneda.getApuesta())
+// console.log("resultado: " + tragamoneda.getResultado());

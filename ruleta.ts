@@ -41,9 +41,9 @@ export class Ruleta extends Juego {
 
 }
 
-let juegoRuleta: Ruleta = new Ruleta ();
-juegoRuleta.setNumeroElegido(10);
-juegoRuleta.setApuesta(500);
-juegoRuleta.mostrarInstrucciones();
-juegoRuleta.jugar();
-console.log(juegoRuleta.getResultado());
+// let juegoRuleta: Ruleta = new Ruleta ();
+// juegoRuleta.setNumeroElegido(10);
+// juegoRuleta.setApuesta(500);
+// juegoRuleta.mostrarInstrucciones();
+// juegoRuleta.jugar();
+// console.log(juegoRuleta.getResultado());

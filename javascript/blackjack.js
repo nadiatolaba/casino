@@ -40,8 +40,8 @@ class BlackJack extends Juego_1.Juego {
     }
 }
 exports.BlackJack = BlackJack;
-let newBlackJack = new BlackJack();
-newBlackJack.mostrarInstrucciones();
-newBlackJack.setApuesta(1000);
-newBlackJack.jugar();
-console.log(newBlackJack.getResultado());
+// let newBlackJack: BlackJack = new BlackJack ();
+// newBlackJack.mostrarInstrucciones();
+// newBlackJack.setApuesta(1000);
+// newBlackJack.jugar();
+// console.log(newBlackJack.getResultado());
