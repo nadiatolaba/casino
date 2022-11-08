@@ -5,6 +5,7 @@ const Juego_1 = require("./Juego");
 class BlackJack extends Juego_1.Juego {
     constructor() {
         super('BlackJack');
+        this.numGanador = 21;
     }
     jugar() {
         let suma1 = (this.generarNroAleatorioEntreRango(1, 11));
@@ -13,7 +14,7 @@ class BlackJack extends Juego_1.Juego {
         let suma4 = (this.generarNroAleatorioEntreRango(1, 11));
         let cartasJugador = suma1 + suma3;
         let cartasCasa = suma2 + suma4;
-        if (cartasJugador === 21) {
+        if (cartasJugador === this.numGanador) {
             this.setResultado(this.apuesta * 3);
             console.log(`¡BLACKJACK! ¡GANASTE!`);
         }

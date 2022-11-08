@@ -1,36 +1,59 @@
 "use strict";
-exports.__esModule = true;
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.Juego = void 0;
-var fs = require("fs");
-var Juego = /** @class */ (function () {
-    function Juego(pTematica, pApuesta) {
+const fs = __importStar(require("fs"));
+class Juego {
+    constructor(pTematica) {
         this.tematica = pTematica;
-        this.apuesta = pApuesta;
+        this.apuesta = 0;
         this.resultado = 0;
     }
-    Juego.prototype.setApuesta = function (pApuesta) {
+    setApuesta(pApuesta) {
         this.apuesta = pApuesta;
-    };
-    Juego.prototype.getApuesta = function () {
+    }
+    getApuesta() {
         return this.apuesta;
-    };
-    Juego.prototype.getTematica = function () {
+    }
+    getTematica() {
         return this.tematica;
-    };
-    Juego.prototype.generarNroAleatorioEntreRango = function (minimo, maximo) {
-        var nroAleatorio = Math.floor(Math.random() * ((maximo - minimo) + 1) + minimo);
+    }
+    generarNroAleatorioEntreRango(minimo, maximo) {
+        let nroAleatorio = Math.floor(Math.random() * ((maximo - minimo) + 1) + minimo);
         return nroAleatorio;
-    };
-    Juego.prototype.guardarResultadoEnTxT = function (ruta, resultado) {
-        fs.appendFile(ruta, resultado, function (error) {
+    }
+    guardarResultadoEnTxT(ruta, resultado) {
+        fs.appendFile(ruta, resultado, (error) => {
             if (error) {
                 console.log(error);
                 return;
             }
         });
-    };
-    Juego.prototype.leerArchivo = function (ruta) {
-        fs.readFile(ruta, 'utf-8', function (error, texto) {
+    }
+    leerArchivo(ruta) {
+        fs.readFile(ruta, 'utf-8', (error, texto) => {
             if (!error) {
                 console.log(texto);
             }
@@ -38,14 +61,13 @@ var Juego = /** @class */ (function () {
                 console.log(error);
             }
         });
-    };
-    Juego.prototype.setResultado = function (paramResultado) {
+    }
+    setResultado(paramResultado) {
         this.resultado = paramResultado;
-    };
+    }
     ;
-    Juego.prototype.getResultado = function () {
+    getResultado() {
         return this.resultado;
-    };
-    return Juego;
-}());
+    }
+}
 exports.Juego = Juego;
