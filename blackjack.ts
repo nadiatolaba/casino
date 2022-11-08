@@ -39,8 +39,8 @@ export class BlackJack extends Juego{
         this.leerArchivo("infoJuegos\\instrucciones\\blackjack.txt")
     }
 }
-let newBlackJack: BlackJack = new BlackJack ();
-newBlackJack.mostrarInstrucciones();
-newBlackJack.setApuesta(1000);
-newBlackJack.jugar();
-console.log(newBlackJack.getResultado());
+// let newBlackJack: BlackJack = new BlackJack ();
+// newBlackJack.mostrarInstrucciones();
+// newBlackJack.setApuesta(1000);
+// newBlackJack.jugar();
+// console.log(newBlackJack.getResultado());
