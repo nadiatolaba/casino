@@ -7,9 +7,8 @@ class Ruleta extends Juego_1.Juego {
         super("Ruleta", paramApuestas);
         this.numeroElegido = -1;
         this.numeroGanador = -1;
-        this.apuestas = paramApuestas;
     }
-    getNroGanador() {
+    getNumeroGanador() {
         return this.numeroGanador;
     }
     setNumeroElegido(pNroElegido) {

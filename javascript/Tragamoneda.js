@@ -44,7 +44,10 @@ class Tragamoneda extends Juego_1.Juego {
     mostrarMatrizGenerada() {
         let presentacion = "";
         for (let i = 0; i < this.matrizGenerada.length; i++) {
-            presentacion += this.matrizGenerada[i] + "\n";
+            presentacion += this.matrizGenerada[i];
+            if (i != this.matrizGenerada.length - 1) {
+                presentacion += "\n";
+            }
         }
         return presentacion;
     }

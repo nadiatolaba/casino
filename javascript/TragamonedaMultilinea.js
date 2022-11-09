@@ -25,10 +25,15 @@ class TragamonedaMultilinea extends Tragamoneda_1.Tragamoneda {
         if (this.cantLineasGanadoras > 0) {
             this.setResultado(this.apuesta * 2 * this.cantLineasGanadoras);
         }
+        else {
+            this.setResultado(0);
+        }
         if (this.obtenerLineasGanadoras(this.matrizGenerada) != "") {
             this.lineasGanadoras = this.obtenerLineasGanadoras(this.matrizGenerada);
         }
-        console.log(this.lineasGanadoras);
+        else {
+            this.lineasGanadoras = "No hay lineas ganadoras";
+        }
         // Preparando INFO para guardar en txt
         let matriz = `\t\t\t${this.matrizGenerada[0]}\n\t\t\t${this.matrizGenerada[1]}\n\t\t\t${this.matrizGenerada[2]}`;
         let fechaActual = new Date().getDate() + "/" + new Date().getMonth() + "/" + new Date().getFullYear();
