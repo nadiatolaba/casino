@@ -1,4 +1,4 @@
-Instrucciones de BlackJack:
+INSTRUCCIONES DE BLACKJACK: 
 Se reparten dos cartas cada uno(Jugador, Casa).
 Si el jugador saca mas de 21, pierde.
 Si el jugador saca 21 = BlackJack.

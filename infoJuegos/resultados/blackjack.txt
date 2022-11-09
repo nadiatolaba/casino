@@ -3,3 +3,11 @@ INFO - 7/10/2022 13:35:49 - Juego: BlackJack - Resultado apuesta: $2000 - Dinero
 INFO - 7/10/2022 13:37:41 - Juego: BlackJack - Resultado apuesta: $2000 - Dinero apostado: $1000 - Cartas Jugador: 12 - Cartas Casa: 11
 INFO - 7/10/2022 21:57:41 - Juego: BlackJack - Resultado apuesta: $2000 - Dinero apostado: $1000 - Cartas Jugador: 10 - Cartas Casa: 4
 INFO - 7/10/2022 21:59:18 - Juego: BlackJack - Resultado apuesta: $2000 - Dinero apostado: $1000 - Cartas Jugador: 20 - Cartas Casa: 15
+INFO - 8/10/2022 21:13:22 - Juego: BlackJack - Resultado apuesta: $6000 - Dinero apostado: $3000 - Cartas Jugador: 22 - Cartas Casa: 11
+INFO - 8/10/2022 21:24:57 - Juego: BlackJack - Resultado apuesta: $0 - Dinero apostado: $3000 - Cartas Jugador: 16 - Cartas Casa: 20
+INFO - 8/10/2022 21:25:28 - Juego: BlackJack - Resultado apuesta: $0 - Dinero apostado: $3000 - Cartas Jugador: 5 - Cartas Casa: 7
+INFO - 8/10/2022 21:37:39 - Juego: BlackJack - Resultado apuesta: $0 - Dinero apostado: $1500 - Cartas Jugador: 13 - Cartas Casa: 16
+INFO - 8/10/2022 21:40:6 - Juego: BlackJack - Resultado apuesta: $0 - Dinero apostado: $3000 - Cartas Jugador: 4 - Cartas Casa: 11
+INFO - 8/10/2022 21:44:59 - Juego: BlackJack - Resultado apuesta: $0 - Dinero apostado: $3000 - Cartas Jugador: 8 - Cartas Casa: 10
+INFO - 8/10/2022 21:46:50 - Juego: BlackJack - Resultado apuesta: $6000 - Dinero apostado: $3000 - Cartas Jugador: 8 - Cartas Casa: 2
+INFO - 8/10/2022 21:47:3 - Juego: BlackJack - Resultado apuesta: $0 - Dinero apostado: $3000 - Cartas Jugador: 10 - Cartas Casa: 11

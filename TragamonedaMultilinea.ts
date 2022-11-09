@@ -4,8 +4,8 @@ export class TragamonedaMultilinea extends Tragamoneda{
     private lineasGanadoras: string;
     private cantLineasGanadoras:number;
 
-    constructor(simbolosDisponibles: string[], probabilidadDeGanar: number, valoresDeApuesta: number[]) {
-        super("Tragamoneda Multilinea", simbolosDisponibles,probabilidadDeGanar,valoresDeApuesta);
+    constructor(valoresDeApuesta: number[], simbolosDisponibles: string[], probabilidadDeGanar: number, ) {
+        super("Tragamoneda Multilinea", valoresDeApuesta, simbolosDisponibles,probabilidadDeGanar);
         this.lineasGanadoras = "No hay lineas ganadoras";
         this.cantLineasGanadoras = 0;
     }

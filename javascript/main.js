@@ -41,22 +41,82 @@ const casino_1 = require("./casino");
 const blackjack_1 = require("./blackjack");
 const ruleta_1 = require("./ruleta");
 const TragamonedaMultilinea_1 = require("./TragamonedaMultilinea");
-let newRuleta = new ruleta_1.Ruleta();
-let newBlacJack = new blackjack_1.BlackJack();
-let newTragamonedasMultilinea = new TragamonedaMultilinea_1.TragamonedaMultilinea(["#", "$", "@"], 0.5, [500, 1500, 3000]);
+let newRuleta = new ruleta_1.Ruleta([500, 1500, 3000]);
+let newBlacJack = new blackjack_1.BlackJack([500, 1500, 3000]);
+let newTragamonedasMultilinea = new TragamonedaMultilinea_1.TragamonedaMultilinea([500, 1500, 3000], ["#", "$", "@"], 0.5);
 // let newTragamonedasTradicional
-newRuleta.mostrarInstrucciones();
-newBlacJack.mostrarInstrucciones();
-newTragamonedasMultilinea.mostrarInstrucciones();
 let newCasino = new casino_1.Casino([newRuleta, newBlacJack, newTragamonedasMultilinea]);
-// for(let i:number=0;i<newCasino.getJuegosDisponibles().length;i++){
-//     newCasino.getJuegosDisponibles()[i].mostrarInstrucciones();
-// }
+newCasino.presentarJuegos();
 let juegos = [];
 newCasino.getJuegosDisponibles().forEach(juego => juegos.push(juego.getTematica()));
 console.log("Juegos Disponibles:");
 let indice = rs.keyInSelect(juegos, 'Seleccione un juego'); // opcion CANCEL = -1
 if (indice != -1) {
     newCasino.elegirJuego(indice);
+    console.log(`Usted a elegido el juego ${newCasino.getJuegoElegido().getTematica()}`);
+    if (newCasino.getJuegoElegido().getTematica() === newRuleta.getTematica()) {
+        let apuestas = [];
+        newRuleta.getApuestasPermitidas().forEach(apuesta => apuestas.push(String(apuesta)));
+        let indice = rs.keyInSelect(apuestas, 'Seleccione su apuesta'); // opcion CANCEL = -1
+        if (indice != -1) {
+            newRuleta.setApuesta(newRuleta.getApuestasPermitidas()[indice]);
+            let nroElegido = 0;
+            do {
+                nroElegido = rs.questionInt("Ingrese el numero que saldra ganador: ");
+                if (nroElegido >= 0 && nroElegido <= 36) {
+                    break;
+                }
+                console.log("**El numero ingresado debe ser un numero entre 0 y 36**");
+            } while (true);
+            newRuleta.setNumeroElegido(nroElegido);
+            newRuleta.jugar();
+            console.log(`Usted apostó: $${newRuleta.getApuesta()}`);
+            console.log(`Usted ah apostado al número: ${newRuleta.getNumeroElegido()}`);
+            console.log(`El número ganador es: ${newRuleta.getNroGanador()}`);
+            console.log(`Usted gano: $ ${newRuleta.getResultado()}`);
+        }
+        else {
+            console.log('Advertencia: para poder jugar debe realizar una apuesta.');
+        }
+    }
+    else if (newCasino.getJuegoElegido().getTematica() === newTragamonedasMultilinea.getTematica()) {
+        let apuestas = [];
+        newTragamonedasMultilinea.getApuestasPermitidas().forEach(apuesta => apuestas.push(String(apuesta)));
+        let indice = rs.keyInSelect(apuestas, 'Seleccione su apuesta'); // opcion CANCEL = -1
+        if (indice != -1) {
+            newTragamonedasMultilinea.setApuesta(newTragamonedasMultilinea.getApuestasPermitidas()[indice]);
+            newTragamonedasMultilinea.jugar();
+            console.log(`Usted apostó: $${newTragamonedasMultilinea.getApuesta()}`);
+            console.log("Matriz Generada:  \n" + newTragamonedasMultilinea.mostrarMatrizGenerada());
+            console.log("Cantidad de Lineas Ganadoras:" + newTragamonedasMultilinea.getCantLineasGanadoras());
+            console.log("Lineas ganadoras: " + newTragamonedasMultilinea.getLineasGanadoras());
+            console.log(`Usted gano: $${newTragamonedasMultilinea.getResultado()}`);
+        }
+        else {
+            console.log('Advertencia: para poder jugar debe realizar una apuesta.');
+        }
+    }
+    else if (newCasino.getJuegoElegido().getTematica() === newBlacJack.getTematica()) {
+        let apuestas = [];
+        newTragamonedasMultilinea.getApuestasPermitidas().forEach(apuesta => apuestas.push(String(apuesta)));
+        let indice = rs.keyInSelect(apuestas, 'Seleccione su apuesta'); // opcion CANCEL = -1
+        if (indice != -1) {
+            newBlacJack.setApuesta(newBlacJack.getApuestasPermitidas()[indice]);
+            console.log(`Usted apostó: $${newBlacJack.getApuesta()}`);
+            newBlacJack.jugar();
+            console.log(`Puntuacion de la Casa: ${newBlacJack.getCartasCasa()}`);
+            console.log(`Puntuacion del Jugador: ${newBlacJack.getCartasJugador()}`);
+            console.log(newBlacJack.getResultadoBlackJack());
+            if (newBlacJack.getResultado() > 0) {
+                console.log(`Usted gano: $${newBlacJack.getResultado()}`);
+            }
+        }
+        else {
+            console.log('Advertencia: para poder jugar debe realizar una apuesta.');
+        }
+    }
 }
-console.log(newCasino.getJuegoElegido());
+else {
+    console.log('No se a elegido ningún juego!');
+}
+;

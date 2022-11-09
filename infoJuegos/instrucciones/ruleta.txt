@@ -1,1 +1,4 @@
-INSTRUCCIONES JUEGO RULETA
+INSTRUCCIONES JUEGO RULETA:
+- Se debera elegir un numero entre el rango de 0 al 36.
+- Para ganar, el jugador debe acertar al numero que figure en la ruleta.
+- La ganancia será el triple de la apuesta realizada.

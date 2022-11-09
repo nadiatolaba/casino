@@ -3,11 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tragamoneda = void 0;
 const Juego_1 = require("./Juego");
 class Tragamoneda extends Juego_1.Juego {
-    constructor(tematica, simbolosDisponibles, probabilidadDeGanar, valoresDeApuesta) {
-        super(tematica);
+    constructor(tematica, apuestasPermitidas, simbolosDisponibles, probabilidadDeGanar) {
+        super(tematica, apuestasPermitidas);
         this.simbolosDisponibles = simbolosDisponibles;
         this.probabilidadDeGanar = probabilidadDeGanar;
-        this.valoresDeApuesta = valoresDeApuesta;
         this.matrizGenerada = [];
     }
     obtenerUnElementoAlAzar(elementos) {
@@ -54,12 +53,6 @@ class Tragamoneda extends Juego_1.Juego {
     }
     getSimbolosDisponibles() {
         return this.simbolosDisponibles;
-    }
-    getValoresDeApuesta() {
-        return this.valoresDeApuesta;
-    }
-    setValoresDeApuesta(valores) {
-        this.valoresDeApuesta = valores;
     }
     getProbabilidadDeGanar() {
         return this.probabilidadDeGanar;
