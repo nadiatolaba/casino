@@ -30,12 +30,13 @@ export abstract class Juego {
     }
 
     protected guardarResultadoEnTxT(ruta: string, resultado: string): void {
-        fs.appendFile(ruta, resultado, (error) => {
-            if (error) {
-                console.log(error);
-                return
-            }
-        });
+            fs.appendFileSync(ruta,resultado);        
+        // fs.appendFile(ruta, resultado, (error) => {
+        //     if (error) {
+        //         console.log(error);
+        //         return
+        //     }
+        // });
     }
 
     protected leerArchivo(ruta: string) {

@@ -19,3 +19,6 @@ INFO - 8/10/2022 20:30:28 - Juego: Ruleta - Resultado apuesta: $0 - Dinero apost
 INFO - 8/10/2022 20:51:13 - Juego: Ruleta - Resultado apuesta: $0 - Dinero apostado: $3000 - Numero elegido: 5 - Numero ganador: 21
 INFO - 9/10/2022 17:36:27 - Juego: Ruleta - Resultado apuesta: $0 - Dinero apostado: $500 - Numero elegido: 10 - Numero ganador: 16
 INFO - 9/10/2022 17:36:43 - Juego: Ruleta - Resultado apuesta: $0 - Dinero apostado: $1500 - Numero elegido: 13 - Numero ganador: 10
+INFO - 9/10/2022 17:50:49 - Juego: Ruleta - Resultado apuesta: $0 - Dinero apostado: $3000 - Numero elegido: 35 - Numero ganador: 32
+INFO - 9/10/2022 17:51:8 - Juego: Ruleta - Resultado apuesta: $0 - Dinero apostado: $3000 - Numero elegido: 5 - Numero ganador: 22
+INFO - 9/10/2022 18:44:56 - Juego: Ruleta - Resultado apuesta: $9000 - Dinero apostado: $3000 - Numero elegido: 18 - Numero ganador: 18

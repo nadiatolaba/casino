@@ -46,12 +46,13 @@ class Juego {
         return nroAleatorio;
     }
     guardarResultadoEnTxT(ruta, resultado) {
-        fs.appendFile(ruta, resultado, (error) => {
-            if (error) {
-                console.log(error);
-                return;
-            }
-        });
+        fs.appendFileSync(ruta, resultado);
+        // fs.appendFile(ruta, resultado, (error) => {
+        //     if (error) {
+        //         console.log(error);
+        //         return
+        //     }
+        // });
     }
     leerArchivo(ruta) {
         console.log(fs.readFileSync(ruta, 'utf-8'));
