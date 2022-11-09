@@ -26,10 +26,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Juego = void 0;
 const fs = __importStar(require("fs"));
 class Juego {
-    constructor(pTematica) {
+    constructor(pTematica, apuestasPermitidasAux) {
         this.tematica = pTematica;
         this.apuesta = 0;
         this.resultado = 0;
+        this.apuestasPermitidas = apuestasPermitidasAux;
     }
     setApuesta(pApuesta) {
         this.apuesta = pApuesta;
@@ -53,14 +54,15 @@ class Juego {
         });
     }
     leerArchivo(ruta) {
-        fs.readFile(ruta, 'utf-8', (error, texto) => {
-            if (!error) {
-                console.log(texto);
-            }
-            else {
-                console.log(error);
-            }
-        });
+        console.log(fs.readFileSync(ruta, 'utf-8'));
+        // fs.readFile(ruta,'utf-8',(error, texto) => {
+        //     if(!error){
+        //         console.log(texto)
+        //     }
+        //     else{ 
+        //         console.log(error)
+        //     }
+        // });
     }
     setResultado(paramResultado) {
         this.resultado = paramResultado;
@@ -68,6 +70,12 @@ class Juego {
     ;
     getResultado() {
         return this.resultado;
+    }
+    setApuestasPermitidas(apuestas) {
+        this.apuestasPermitidas = apuestas;
+    }
+    getApuestasPermitidas() {
+        return this.apuestasPermitidas;
     }
 }
 exports.Juego = Juego;

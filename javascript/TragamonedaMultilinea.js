@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TragamonedaMultilinea = void 0;
 const Tragamoneda_1 = require("./Tragamoneda");
 class TragamonedaMultilinea extends Tragamoneda_1.Tragamoneda {
-    constructor(simbolosDisponibles, probabilidadDeGanar, valoresDeApuesta) {
-        super("Tragamoneda Multilinea", simbolosDisponibles, probabilidadDeGanar, valoresDeApuesta);
+    constructor(valoresDeApuesta, simbolosDisponibles, probabilidadDeGanar) {
+        super("Tragamoneda Multilinea", valoresDeApuesta, simbolosDisponibles, probabilidadDeGanar);
         this.lineasGanadoras = "No hay lineas ganadoras";
         this.cantLineasGanadoras = 0;
     }

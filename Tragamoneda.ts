@@ -3,14 +3,12 @@ import { Juego } from "./Juego";
 export abstract class Tragamoneda extends Juego {
     protected simbolosDisponibles: string[];
     protected probabilidadDeGanar: number;
-    protected valoresDeApuesta: number[];
     protected matrizGenerada: string [][]; // [[a1,a2,a3], [b1,b2,b3], [c1,c2,c3]];
-
-    constructor(tematica: string, simbolosDisponibles: string[], probabilidadDeGanar: number, valoresDeApuesta: number[]) {
-        super(tematica);
+    
+    constructor(tematica: string, apuestasPermitidas:number[], simbolosDisponibles: string[], probabilidadDeGanar: number) {
+        super(tematica, apuestasPermitidas);
         this.simbolosDisponibles = simbolosDisponibles;
         this.probabilidadDeGanar = probabilidadDeGanar;
-        this.valoresDeApuesta = valoresDeApuesta;
         this.matrizGenerada = [];
     }
 
@@ -70,15 +68,7 @@ export abstract class Tragamoneda extends Juego {
     public getSimbolosDisponibles(): string[] {
         return this.simbolosDisponibles;
     }
-
-    public getValoresDeApuesta(): number[] {
-        return this.valoresDeApuesta;
-    }
-
-    public setValoresDeApuesta(valores: number[]) {
-        this.valoresDeApuesta = valores;
-    }
-
+    
     public getProbabilidadDeGanar(): number {
         return this.probabilidadDeGanar;
     }

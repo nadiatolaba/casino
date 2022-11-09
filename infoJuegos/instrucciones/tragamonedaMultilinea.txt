@@ -1,4 +1,4 @@
-INSTRUCCIONES JUEGO TRAGAMONEDA MULTILINEA
+INSTRUCCIONES JUEGO TRAGAMONEDA MULTILINEA:
 - Este tragamonedas cuenta con tres rieles dónde se mostrarán simbolos al azar.
 - Para poder ganar se deberá obtener al menos una línea completa de simbolos iguales
   que pueden estar alineados de manera horizontal o diagonal.
