@@ -1,17 +1,15 @@
 import { Juego } from "./Juego";
 export class Ruleta extends Juego {
-    private numeroElegido:number;
-    private numeroGanador:number;
-    private apuestas:number[];
+    private numeroElegido: number;
+    private numeroGanador: number;
 
-    constructor (paramApuestas:number[]){
-        super("Ruleta",paramApuestas);
+    constructor(paramApuestas: number[]) {
+        super("Ruleta", paramApuestas);
         this.numeroElegido = -1;
         this.numeroGanador = -1;
-        this.apuestas = paramApuestas;
     }
 
-    public getNroGanador(): number {
+    public getNumeroGanador(): number {
         return this.numeroGanador;
     }
 
@@ -24,8 +22,8 @@ export class Ruleta extends Juego {
     }
 
     public jugar(): void {
-        this.numeroGanador = this.generarNroAleatorioEntreRango(0,36);
-        if(this.numeroElegido ===  this.numeroGanador){
+        this.numeroGanador = this.generarNroAleatorioEntreRango(0, 36);
+        if (this.numeroElegido === this.numeroGanador) {
             this.setResultado(this.apuesta * 3);
         } else {
             this.setResultado(0);
@@ -38,7 +36,7 @@ export class Ruleta extends Juego {
     }
 
     public mostrarInstrucciones(): void {
-        this.leerArchivo("infoJuegos\\instrucciones\\ruleta.txt")
+        this.leerArchivo("infoJuegos\\instrucciones\\ruleta.txt");
     }
 
 }

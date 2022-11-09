@@ -8,6 +8,8 @@
     "ruleta": "node ./javascript/ruleta.js",
     "tragamoneda": "node ./javascript/Tragamoneda.js",
     "multilinea": "node ./javascript/TragamonedaMultilinea.js",
+    "blackjack": "node ./javascript/blackjack.js",
+    "casino": "node ./javascript/casino.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

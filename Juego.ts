@@ -5,7 +5,7 @@ export abstract class Juego {
     protected resultado: number;
     protected apuestasPermitidas: number[];
 
-    constructor (pTematica:string,apuestasPermitidasAux:number[]){
+    constructor(pTematica: string, apuestasPermitidasAux: number[]) {
         this.tematica = pTematica;
         this.apuesta = 0;
         this.resultado = 0;
@@ -24,23 +24,23 @@ export abstract class Juego {
         return this.tematica;
     }
 
-    protected generarNroAleatorioEntreRango(minimo:number, maximo:number):number{
-        let nroAleatorio:number = Math.floor(Math.random() * ((maximo - minimo) + 1) + minimo);
+    protected generarNroAleatorioEntreRango(minimo: number, maximo: number): number {
+        let nroAleatorio: number = Math.floor(Math.random() * ((maximo - minimo) + 1) + minimo);
         return nroAleatorio;
     }
 
-    protected guardarResultadoEnTxT(ruta: string, resultado: string):void {
+    protected guardarResultadoEnTxT(ruta: string, resultado: string): void {
         fs.appendFile(ruta, resultado, (error) => {
             if (error) {
                 console.log(error);
-                return 
+                return
             }
         });
     }
 
-    protected leerArchivo(ruta:string) {
-        
-        console.log(fs.readFileSync(ruta,'utf-8'));
+    protected leerArchivo(ruta: string) {
+
+        console.log(fs.readFileSync(ruta, 'utf-8'));
 
         // fs.readFile(ruta,'utf-8',(error, texto) => {
         //     if(!error){
@@ -53,23 +53,23 @@ export abstract class Juego {
 
     }
 
-    public abstract jugar():void;
+    public abstract jugar(): void;
 
-    protected setResultado(paramResultado:number):void{
+    protected setResultado(paramResultado: number): void {
         this.resultado = paramResultado;
     };
 
-    public getResultado():number{
+    public getResultado(): number {
         return this.resultado;
     }
 
-    public abstract mostrarInstrucciones():void;
+    public abstract mostrarInstrucciones(): void;
 
-    public setApuestasPermitidas(apuestas:number[]):void{
+    public setApuestasPermitidas(apuestas: number[]): void {
         this.apuestasPermitidas = apuestas;
     }
-    
-    public getApuestasPermitidas():number[]{
+
+    public getApuestasPermitidas(): number[] {
         return this.apuestasPermitidas;
     }
 }

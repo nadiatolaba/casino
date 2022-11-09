@@ -3,24 +3,24 @@ import { Juego } from "./Juego";
 export abstract class Tragamoneda extends Juego {
     protected simbolosDisponibles: string[];
     protected probabilidadDeGanar: number;
-    protected matrizGenerada: string [][]; // [[a1,a2,a3], [b1,b2,b3], [c1,c2,c3]];
-    
-    constructor(tematica: string, apuestasPermitidas:number[], simbolosDisponibles: string[], probabilidadDeGanar: number) {
+    protected matrizGenerada: string[][]; // [[a1,a2,a3], [b1,b2,b3], [c1,c2,c3]];
+
+    constructor(tematica: string, apuestasPermitidas: number[], simbolosDisponibles: string[], probabilidadDeGanar: number) {
         super(tematica, apuestasPermitidas);
         this.simbolosDisponibles = simbolosDisponibles;
         this.probabilidadDeGanar = probabilidadDeGanar;
         this.matrizGenerada = [];
     }
 
-    
+
     private obtenerUnElementoAlAzar(elementos: string[]): string {
-        let pos: number = this.generarNroAleatorioEntreRango(0, elementos.length-1);
+        let pos: number = this.generarNroAleatorioEntreRango(0, elementos.length - 1);
         return elementos[pos];
     }
 
     private generarLineaDeSimbolos(cantSimbolos: number): string[] {
         let lineaSimbolos: string[] = [];
-    
+
         for (let i: number = 0; i < cantSimbolos; i++) {
             let simbolo: string = this.obtenerUnElementoAlAzar(this.simbolosDisponibles);
             lineaSimbolos.push(simbolo);
@@ -30,7 +30,7 @@ export abstract class Tragamoneda extends Juego {
 
     protected generarMatrizCuadrada(dimension: number): string[][] {
         let matriz: string[][] = [];
-    
+
         for (let i: number = 0; i < dimension; i++) {
             let lineaSimbolos: string[] = this.generarLineaDeSimbolos(dimension);
             matriz.push(lineaSimbolos);
@@ -47,7 +47,7 @@ export abstract class Tragamoneda extends Juego {
         }
         return true;
     }
-    
+
     protected setMatrizGenerada(matriz: string[][]): void {
         this.matrizGenerada = matriz;
     }
@@ -55,20 +55,23 @@ export abstract class Tragamoneda extends Juego {
     public mostrarMatrizGenerada(): string {
         let presentacion: string = "";
         for (let i: number = 0; i < this.matrizGenerada.length; i++) {
-            presentacion += this.matrizGenerada[i] + "\n";
+            presentacion += this.matrizGenerada[i];
+            if (i != this.matrizGenerada.length - 1) {
+                presentacion += "\n";
+            }
         }
         return presentacion;
 
     }
 
-    public setSimbolosDisponibles(simbolos:string[]): void {
+    public setSimbolosDisponibles(simbolos: string[]): void {
         this.simbolosDisponibles = simbolos;
     }
 
     public getSimbolosDisponibles(): string[] {
         return this.simbolosDisponibles;
     }
-    
+
     public getProbabilidadDeGanar(): number {
         return this.probabilidadDeGanar;
     }
@@ -76,5 +79,5 @@ export abstract class Tragamoneda extends Juego {
     public setProbabilidadDeGanar(probabilidad: number): void {
         this.probabilidadDeGanar = probabilidad;
     }
-    
+
 }

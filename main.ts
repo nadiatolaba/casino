@@ -21,105 +21,94 @@ import { Ruleta } from "./ruleta";
 import { TragamonedaMultilinea } from "./TragamonedaMultilinea";
 
 function eleccionSiNo(pregunta: string): boolean {
-    let opcion: boolean|string = false;
+    let opcion: boolean | string = false;
 
     do {
         opcion = rs.keyInYN(pregunta); // y = true ; n = false ; cualquier otra tecla = ""
-        if (typeof(opcion) == "string") { 
+        if (typeof (opcion) == "string") {
             console.log("*** ingrese una opcion valida ***\n\tPara responder que SI presione la tecla y\n\tPara responder que NO presione la tecla n");
         }
-    } while (typeof(opcion) == "string");
+    } while (typeof (opcion) == "string");
 
     return opcion;
 }
 
-let newRuleta : Ruleta = new Ruleta([500,1500,3000]);
-
-let newBlacJack : BlackJack = new BlackJack([500,1500,3000]);
-let newTragamonedasMultilinea: TragamonedaMultilinea = new TragamonedaMultilinea( [500,1500,3000], ["#", "$", "@"], 0.5);
-
+let newRuleta: Ruleta = new Ruleta([500, 1500, 3000]);
+let newBlacJack: BlackJack = new BlackJack([500, 1500, 3000]);
+let newTragamonedasMultilinea: TragamonedaMultilinea = new TragamonedaMultilinea([500, 1500, 3000], ["#", "$", "@"], 0.5);
 // let newTragamonedasTradicional
+let newCasino: Casino = new Casino([newRuleta, newBlacJack, newTragamonedasMultilinea]);
 
-let newCasino:Casino = new Casino ([newRuleta,newBlacJack,newTragamonedasMultilinea]);
+
 newCasino.presentarJuegos();
 
-
-let juegos:string[] = [];
+let juegos: string[] = [];
 newCasino.getJuegosDisponibles().forEach(juego => juegos.push(juego.getTematica()));
-console.log("Juegos Disponibles:")
-let indice = rs.keyInSelect(juegos, 'Seleccione un juego'); // opcion CANCEL = -1
-if (indice != -1) {
-    newCasino.elegirJuego(indice)
-    console.log(`Usted a elegido el juego ${newCasino.getJuegoElegido().getTematica()}`);
-    let apuestaRealizada: boolean = true;
 
-    if (newCasino.getJuegoElegido().getTematica() === newRuleta.getTematica()){
-        let apuestas:string[] = [];
+console.log("Juegos Disponibles:");
+let indice = rs.keyInSelect(juegos, 'Seleccione un juego'); // // si elige opcion CANCEL --> indice = -1
+if (indice != -1) {
+    newCasino.elegirJuego(indice);
+    console.log(`Usted a elegido el juego ${newCasino.getJuegoElegido().getTematica()}`);
+
+    if (newCasino.getJuegoElegido().getTematica() === newRuleta.getTematica()) {
+        let apuestas: string[] = [];
         newRuleta.getApuestasPermitidas().forEach(apuesta => apuestas.push(String(apuesta)));
-        let indice = rs.keyInSelect(apuestas, 'Seleccione su apuesta'); // opcion CANCEL = -1
-        if(indice != -1){
+        indice = rs.keyInSelect(apuestas, 'Seleccione su apuesta'); // si elige opcion CANCEL --> indice = -1
+        if (indice != -1) {
             newRuleta.setApuesta(newRuleta.getApuestasPermitidas()[indice]);
             let nroElegido: number = 0;
-                do {
-                    nroElegido = rs.questionInt("Ingrese el numero que saldra ganador: ");
-                    if (nroElegido >= 0 && nroElegido <= 36) {
-                        break;
-                    }
-                    console.log("**El numero ingresado debe ser un numero entre 0 y 36**")
-                } while (true);
+            do {
+                nroElegido = rs.questionInt("Ingrese el numero que saldra ganador: ");
+                if (nroElegido >= 0 && nroElegido <= 36) {
+                    break;
+                }
+                console.log("**El numero ingresado debe ser un numero entre 0 y 36**");
+            } while (true);
             newRuleta.setNumeroElegido(nroElegido);
             newRuleta.jugar();
-            console.log(`Usted apostó: $${newRuleta.getApuesta()}`)
-            console.log(`Usted ah apostado al número: ${newRuleta.getNumeroElegido()}`);
-            console.log(`El número ganador es: ${newRuleta.getNroGanador()}`);
-            console.log(`Usted gano: $ ${newRuleta.getResultado()}`);
+            console.log(`Usted apostó: $${newRuleta.getApuesta()}`);
+            console.log(`Su apuesta fue al numero: ${newRuleta.getNumeroElegido()}`);
+            console.log(`El número ganador fue: ${newRuleta.getNumeroGanador()}`);
+            console.log(`Usted ganó: $ ${newRuleta.getResultado()}`);
         }
-        else{
+        else {
             console.log('Advertencia: para poder jugar debe realizar una apuesta.');
-            apuestaRealizada = false;
         }
-    }else if (newCasino.getJuegoElegido().getTematica() === newTragamonedasMultilinea.getTematica()){
-        let apuestas:string[] = [];
+    } else if (newCasino.getJuegoElegido().getTematica() === newTragamonedasMultilinea.getTematica()) {
+        let apuestas: string[] = [];
         newTragamonedasMultilinea.getApuestasPermitidas().forEach(apuesta => apuestas.push(String(apuesta)));
-        let indice = rs.keyInSelect(apuestas, 'Seleccione su apuesta'); // opcion CANCEL = -1
-        if(indice != -1){
-            newTragamonedasMultilinea.setApuesta(newTragamonedasMultilinea.getApuestasPermitidas()[indice])
+        indice = rs.keyInSelect(apuestas, 'Seleccione su apuesta'); // si elige opcion CANCEL --> indice = -1
+        if (indice != -1) {
+            newTragamonedasMultilinea.setApuesta(newTragamonedasMultilinea.getApuestasPermitidas()[indice]);
             newTragamonedasMultilinea.jugar();
-            console.log(`Usted apostó: $${newTragamonedasMultilinea.getApuesta()}`)
-            console.log("Matriz Generada:  \n" + newTragamonedasMultilinea.mostrarMatrizGenerada())
-            console.log("Cantidad de Lineas Ganadoras:" + newTragamonedasMultilinea.getCantLineasGanadoras())
+            console.log(`Usted apostó: $${newTragamonedasMultilinea.getApuesta()}`);
+            console.log("Matriz Generada:  \n" + newTragamonedasMultilinea.mostrarMatrizGenerada());
+            console.log("Cantidad de Lineas Ganadoras:" + newTragamonedasMultilinea.getCantLineasGanadoras());
             console.log("Lineas ganadoras: " + newTragamonedasMultilinea.getLineasGanadoras());
-            console.log(`Usted gano: $${newTragamonedasMultilinea.getResultado()}`)
-        }else{
+            console.log(`Usted ganó: $${newTragamonedasMultilinea.getResultado()}`);
+        } else {
             console.log('Advertencia: para poder jugar debe realizar una apuesta.');
-            apuestaRealizada = false;
         }
-    }else if (newCasino.getJuegoElegido().getTematica() === newBlacJack.getTematica()) {
-        let apuestas:string[] = [];
+    } else if (newCasino.getJuegoElegido().getTematica() === newBlacJack.getTematica()) {
+        let apuestas: string[] = [];
         newTragamonedasMultilinea.getApuestasPermitidas().forEach(apuesta => apuestas.push(String(apuesta)));
-        let indice = rs.keyInSelect(apuestas, 'Seleccione su apuesta'); // opcion CANCEL = -1
-        if(indice != -1){
+        indice = rs.keyInSelect(apuestas, 'Seleccione su apuesta'); // si elige opcion CANCEL --> indice = -1
+        if (indice != -1) {
             newBlacJack.setApuesta(newBlacJack.getApuestasPermitidas()[indice]);
             console.log(`Usted apostó: $${newBlacJack.getApuesta()}`);
             newBlacJack.jugar();
             console.log(`Puntuacion de la Casa: ${newBlacJack.getCartasCasa()}`);
             console.log(`Puntuacion del Jugador: ${newBlacJack.getCartasJugador()}`);
             console.log(newBlacJack.getResultadoBlackJack());
-            if(newBlacJack.getResultado() > 0) {
-            console.log(`Usted gano: $${newBlacJack.getResultado()}`)
+            if (newBlacJack.getResultado() > 0) {
+                console.log(`Usted ganó: $${newBlacJack.getResultado()}`);
             }
-        }else{
+        } else {
             console.log('Advertencia: para poder jugar debe realizar una apuesta.');
-            apuestaRealizada = false;
         }
     }
 
-    // do {
-    //     if(!apuestaRealizada){
-    //         let salir: boolean = eleccionSiNo('¿Desea salir del juego?');
-
-    //     }
-    // }
 } else {
-    console.log('No se a elegido ningún juego!')
+    console.log('No se a elegido ningún juego!');
 };

@@ -8,30 +8,30 @@ export class Casino {
         this.juegoElegido = null;
     }
 
-    public presentarJuegos():void{
+    public presentarJuegos(): void {
         this.juegosDisponibles.forEach(juego => juego.mostrarInstrucciones());
     }
 
-    public elegirJuego(indice:number):void{
-        this.juegoElegido = this.juegosDisponibles[indice]
+    public elegirJuego(indice: number): void {
+        this.juegoElegido = this.juegosDisponibles[indice];
     }
 
-    public getJuegoElegido():Juego | null{
+    public getJuegoElegido(): Juego | null {
         return this.juegoElegido;
     }
 
-    public realizarApuesta(apuesta:number):boolean{
+    public realizarApuesta(apuesta: number): boolean {
         if (this.juegoElegido != null) {
             this.juegoElegido.setApuesta(apuesta);
             return true;
-        }else{
+        } else {
             //mensaje de main.ts
             console.log("Para realizar una apuesta primero debe elegir un juego");
             return false;
         }
     }
 
-    public getResultadoApuesta():number{
+    public getResultadoApuesta(): number {
         if (this.juegoElegido != null && this.juegoElegido.getApuesta() > 0) {
             return this.juegoElegido.getResultado();
         } else {
@@ -39,7 +39,7 @@ export class Casino {
         }
     }
 
-    public getJuegosDisponibles():Juego[]{
+    public getJuegosDisponibles(): Juego[] {
         return this.juegosDisponibles;
     }
 }

@@ -1,11 +1,11 @@
 import { Tragamoneda } from "./Tragamoneda";
 
-export class TragamonedaMultilinea extends Tragamoneda{
+export class TragamonedaMultilinea extends Tragamoneda {
     private lineasGanadoras: string;
-    private cantLineasGanadoras:number;
+    private cantLineasGanadoras: number;
 
-    constructor(valoresDeApuesta: number[], simbolosDisponibles: string[], probabilidadDeGanar: number, ) {
-        super("Tragamoneda Multilinea", valoresDeApuesta, simbolosDisponibles,probabilidadDeGanar);
+    constructor(valoresDeApuesta: number[], simbolosDisponibles: string[], probabilidadDeGanar: number) {
+        super("Tragamoneda Multilinea", valoresDeApuesta, simbolosDisponibles, probabilidadDeGanar);
         this.lineasGanadoras = "No hay lineas ganadoras";
         this.cantLineasGanadoras = 0;
     }
@@ -24,39 +24,42 @@ export class TragamonedaMultilinea extends Tragamoneda{
     }
 
     public jugar(): void {
-       const dimension: number = 3;
-       this.matrizGenerada = this.generarMatrizCuadrada(dimension);
-       
-       this.cantLineasGanadoras = this.obtenerCantidadLineasGanadoras(this.matrizGenerada);
-       if (this.cantLineasGanadoras > 0) {
-            this.setResultado(this.apuesta*2*this.cantLineasGanadoras);
-       }
+        const dimension: number = 3;
+        this.matrizGenerada = this.generarMatrizCuadrada(dimension);
 
-       if (this.obtenerLineasGanadoras(this.matrizGenerada) != "") {
-           this.lineasGanadoras = this.obtenerLineasGanadoras(this.matrizGenerada);
+        this.cantLineasGanadoras = this.obtenerCantidadLineasGanadoras(this.matrizGenerada);
+        if (this.cantLineasGanadoras > 0) {
+            this.setResultado(this.apuesta * 2 * this.cantLineasGanadoras);
+        } else {
+            this.setResultado(0);
         }
-        console.log(this.lineasGanadoras);
 
-       // Preparando INFO para guardar en txt
-       let matriz = `\t\t\t${this.matrizGenerada[0]}\n\t\t\t${this.matrizGenerada[1]}\n\t\t\t${this.matrizGenerada[2]}`;
+        if (this.obtenerLineasGanadoras(this.matrizGenerada) != "") {
+            this.lineasGanadoras = this.obtenerLineasGanadoras(this.matrizGenerada);
+        } else {
+            this.lineasGanadoras = "No hay lineas ganadoras";
+        }
 
-       let fechaActual: string = new Date().getDate() + "/" + new Date().getMonth() + "/" + new Date().getFullYear();
-       let horaActual: string = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
-       
-       let resultado: string = `\nINFO - ${fechaActual} ${horaActual} - Juego: ${this.tematica} - Resultado apuesta: $${this.resultado} - Dinero apostado: $${this.apuesta}\n\t - Matriz Generada:\n${matriz}\n\t - Cantidad de Lineas ganadoras: ${this.cantLineasGanadoras}\n\t - Lineas ganadoras: ${this.lineasGanadoras}`;
-      
-       let ruta: string = "infoJuegos\\resultados\\tragamonadaMultilinea.txt";
-       this.guardarResultadoEnTxT(ruta, resultado);
+        // Preparando INFO para guardar en txt
+        let matriz = `\t\t\t${this.matrizGenerada[0]}\n\t\t\t${this.matrizGenerada[1]}\n\t\t\t${this.matrizGenerada[2]}`;
+
+        let fechaActual: string = new Date().getDate() + "/" + new Date().getMonth() + "/" + new Date().getFullYear();
+        let horaActual: string = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
+
+        let resultado: string = `\nINFO - ${fechaActual} ${horaActual} - Juego: ${this.tematica} - Resultado apuesta: $${this.resultado} - Dinero apostado: $${this.apuesta}\n\t - Matriz Generada:\n${matriz}\n\t - Cantidad de Lineas ganadoras: ${this.cantLineasGanadoras}\n\t - Lineas ganadoras: ${this.lineasGanadoras}`;
+
+        let ruta: string = "infoJuegos\\resultados\\tragamonadaMultilinea.txt";
+        this.guardarResultadoEnTxT(ruta, resultado);
     }
 
     // una cadena de texto que contiene las lineas ganadoras
-    private obtenerLineasGanadoras(matriz:string[][]): string{
-        let lineasGanadoras:string = "";
-        
-        for (let i:number = 0; i < matriz.length; i++) {
+    private obtenerLineasGanadoras(matriz: string[][]): string {
+        let lineasGanadoras: string = "";
+
+        for (let i: number = 0; i < matriz.length; i++) {
             let tieneSimbolosIguales = this.verificarLinea(matriz[i]);
             if (tieneSimbolosIguales) {
-                lineasGanadoras += "horizontal "+ (i+1) + ": " + matriz[i] + "   ";
+                lineasGanadoras += "horizontal " + (i + 1) + ": " + matriz[i] + "   ";
             }
         }
 
@@ -72,10 +75,10 @@ export class TragamonedaMultilinea extends Tragamoneda{
         return lineasGanadoras;
     }
 
-    private obtenerCantidadLineasGanadoras(matriz:string[][]): number {
-        let lineasGanadoras:number = 0;
-        
-        for (let i:number = 0; i < matriz.length; i++) {
+    private obtenerCantidadLineasGanadoras(matriz: string[][]): number {
+        let lineasGanadoras: number = 0;
+
+        for (let i: number = 0; i < matriz.length; i++) {
             if (this.verificarLinea(matriz[i])) {
                 lineasGanadoras += 1;
             }
