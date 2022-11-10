@@ -2,3 +2,5 @@ INSTRUCCIONES JUEGO TRAGAMONEDA TRADICIONAL:
 - Este tragamonedas cuenta con tres rieles dónde se mostrarán simbolos al azar.
 - Para poder ganar se deberá obtener una línea completa en el medio, de simbolos iguales .
 - La ganancia será el doble de la apuesta realizada.
+- Este tragamonedas le permite al jugador predecir el simbolo que saldra igual. 
+  Si acierta se cuadruplica la apuesta realizada y si no acierta se quedaria solamente con su apuesta duplicada.

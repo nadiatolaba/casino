@@ -1,56 +1,75 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.TragamonedaTradicional = void 0;
-const Tragamoneda_1 = require("./Tragamoneda");
-class TragamonedaTradicional extends Tragamoneda_1.Tragamoneda {
-    constructor(valoresDeApuesta, simbolosDisponibles, probabilidadDeGanar) {
+import { Tragamoneda } from "./Tragamoneda";
+
+export class TragamonedaTradicional extends Tragamoneda {
+    private simboloElegido: string;
+    private acertoSimbolo: boolean;
+    private lineaGanadora: string;
+
+    constructor(valoresDeApuesta: number[], simbolosDisponibles: string[], probabilidadDeGanar: number) {
         super("Tragamoneda Tradicional", valoresDeApuesta, simbolosDisponibles, probabilidadDeGanar);
         this.simboloElegido = "No se eligio un simbolo";
         this.acertoSimbolo = false;
         this.lineaGanadora = "No hay linea ganadora";
     }
-    getSimboloElegido() {
+
+
+    public getSimboloElegido(): string {
         return this.simboloElegido;
     }
-    setSimboloElegido(simboloElegido) {
+
+    public setSimboloElegido(simboloElegido: string): void {
         this.simboloElegido = simboloElegido;
     }
-    getLineaGanadora() {
+
+    public getLineaGanadora(): string {
         return this.lineaGanadora;
     }
-    isAcertoSimbolo() {
+
+    public isAcertoSimbolo(): boolean {
         return this.acertoSimbolo;
     }
-    jugar() {
-        const dimension = 3;
+
+
+    public jugar(): void {
+        const dimension: number = 3;
         this.matrizGenerada = this.generarMatrizCuadrada(dimension);
+
+
         if (this.verificarLinea(this.matrizGenerada[1])) {
             this.setResultado(this.apuesta * 2);
             this.acertoSimbolo = this.matrizGenerada[1][1] == this.simboloElegido;
             this.lineaGanadora = "" + this.matrizGenerada[1];
             if (this.acertoSimbolo) {
                 this.setResultado(this.resultado * 2);
-            }
-        }
-        else {
+            } 
+        } else {
             this.setResultado(0);
             this.lineaGanadora = "No hay linea ganadora";
         }
+
         // Preparando INFO para guardar en txt
         let matriz = `\t\t\t${this.matrizGenerada[0]}\n\t\t\t${this.matrizGenerada[1]}\n\t\t\t${this.matrizGenerada[2]}`;
-        let fechaActual = new Date().getDate() + "/" + new Date().getMonth() + "/" + new Date().getFullYear();
-        let horaActual = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
-        let resultado = `\nINFO - ${fechaActual} ${horaActual} - Juego: ${this.tematica} - Resultado apuesta: $${this.resultado} - Dinero apostado: $${this.apuesta} - simbolo Elegido ${this.simboloElegido} - Acerto simbolo: ${this.acertoSimbolo}\n\t - Matriz Generada:\n${matriz}`;
-        let ruta = "infoJuegos\\resultados\\tragamonadaTradicional.txt";
+
+        let fechaActual: string = new Date().getDate() + "/" + new Date().getMonth() + "/" + new Date().getFullYear();
+        let horaActual: string = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
+
+        let resultado: string = `\nINFO - ${fechaActual} ${horaActual} - Juego: ${this.tematica} - Resultado apuesta: $${this.resultado} - Dinero apostado: $${this.apuesta} - simbolo Elegido ${this.simboloElegido} - Acerto simbolo: ${this.acertoSimbolo}\n\t - Matriz Generada:\n${matriz}`;
+
+        let ruta: string = "infoJuegos\\resultados\\tragamonadaTradicional.txt";
         this.guardarResultadoEnTxT(ruta, resultado);
+
     }
-    mostrarInstrucciones() {
+
+    public mostrarInstrucciones(): void {
         this.leerArchivo("infoJuegos\\instrucciones\\tragamonedaTradicional.txt");
     }
+
+
 }
-exports.TragamonedaTradicional = TragamonedaTradicional;
+
 // let simbolos = ["#", "$", "@"];
 // let tragamonedaT = new TragamonedaTradicional([100, 300, 400],simbolos, 40);
+
 // tragamonedaT.setApuesta(200);
 // tragamonedaT.setSimboloElegido(tragamonedaT.getSimbolosDisponibles()[1]);
 // tragamonedaT.jugar();

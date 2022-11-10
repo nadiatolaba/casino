@@ -1,0 +1,11 @@
+
+INFO - 9/10/2022 23:51:23 - Juego: Tragamoneda Tradicional - Resultado apuesta: $0 - Dinero apostado: $500 - simbolo Elegido # - Acerto simbolo: false
+	 - Matriz Generada:
+			$,$,@
+			$,$,@
+			@,@,@
+INFO - 9/10/2022 23:59:24 - Juego: Tragamoneda Tradicional - Resultado apuesta: $0 - Dinero apostado: $500 - simbolo Elegido # - Acerto simbolo: false
+	 - Matriz Generada:
+			$,@,#
+			@,$,$
+			$,$,@

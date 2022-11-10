@@ -19,6 +19,7 @@ import { Casino } from "./casino";
 import { BlackJack } from "./blackjack";
 import { Ruleta } from "./ruleta";
 import { TragamonedaMultilinea } from "./TragamonedaMultilinea";
+import { TragamonedaTradicional } from './TragamonedaTradicional';
 
 function eleccionSiNo(pregunta: string): boolean {
     let opcion: boolean | string = false;
@@ -36,8 +37,8 @@ function eleccionSiNo(pregunta: string): boolean {
 let newRuleta: Ruleta = new Ruleta([500, 1500, 3000]);
 let newBlacJack: BlackJack = new BlackJack([500, 1500, 3000]);
 let newTragamonedasMultilinea: TragamonedaMultilinea = new TragamonedaMultilinea([500, 1500, 3000], ["#", "$", "@"], 0.5);
-// let newTragamonedasTradicional
-let newCasino: Casino = new Casino([newRuleta, newBlacJack, newTragamonedasMultilinea]);
+let newTragamonedasTradicional: TragamonedaTradicional = new TragamonedaTradicional([500, 1500, 3000], ["#", "$", "@"], 0.5);
+let newCasino: Casino = new Casino([newRuleta, newBlacJack, newTragamonedasMultilinea, newTragamonedasTradicional]);
 
 
 newCasino.presentarJuegos();
@@ -125,7 +126,41 @@ do {
                 }
                 quiereSalir = eleccionSiNo("Desea salir del juego?");
             } while (!quiereSalir);
-        } // else if ()
+        } else if (newCasino.getJuegoElegido().getTematica() === newTragamonedasTradicional.getTematica()) {
+            let apuestas: string[] = [];
+            newTragamonedasTradicional.getApuestasPermitidas().forEach(apuesta => apuestas.push(String(apuesta)));
+            do {
+                console.log(`\n${newCasino.getJuegoElegido().getTematica().toUpperCase()}`);
+                console.log("Apuestas disponibles: $");
+                indice = rs.keyInSelect(apuestas, 'Seleccione su apuesta'); // si elige opcion CANCEL --> indice = -1
+                if (indice != -1) {
+                    newTragamonedasTradicional.setApuesta(newTragamonedasTradicional.getApuestasPermitidas()[indice]);
+                    console.log(`Usted apostó: $${newTragamonedasTradicional.getApuesta()}`);
+                    indice = rs.keyInSelect(newTragamonedasTradicional.getSimbolosDisponibles(), 'Seleccione el simbolo que saldra igual'); // si elige opcion CANCEL --> indice = -1
+                    if (indice != -1) {
+                        newTragamonedasTradicional.setSimboloElegido(newTragamonedasTradicional.getSimbolosDisponibles()[indice]);
+                        console.log(`Usted eligio el simbolo: ${newTragamonedasTradicional.getSimboloElegido()}`);
+                        newTragamonedasTradicional.jugar();
+                        
+                        console.log(`Usted apostó: $${newTragamonedasTradicional.getApuesta()}`);
+                        console.log(`Su simbolo elegido fue: ${newTragamonedasTradicional.getSimboloElegido()}`);
+                        console.log("Matriz Generada:\n" + newTragamonedasTradicional.mostrarMatrizGenerada());
+                        console.log(`Linea ganadora: ${newTragamonedasTradicional.getLineaGanadora()}`);
+                        if (newTragamonedasTradicional.getResultado() > 0) {
+                            if (newTragamonedasTradicional.isAcertoSimbolo()) {
+                                console.log(`Usted le acerto al simbolo: ${newTragamonedasTradicional.getSimboloElegido()}`);
+                            }
+                        }
+                        console.log(`Usted ganó: $${newTragamonedasTradicional.getResultado()}`);
+                    } else {
+                        console.log('Advertencia: para poder jugar debe predecir el simbolo.');
+                    }
+                } else {
+                    console.log('Advertencia: para poder jugar debe realizar una apuesta.');
+                }
+                quiereSalir = eleccionSiNo("Desea salir del juego?");
+            } while (!quiereSalir);
+        }
     } else {
         console.log('No se a elegido ningún juego!');
     }
